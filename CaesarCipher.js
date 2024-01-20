@@ -1,24 +1,21 @@
-function CaesarCipher(str,num)
+function CaesarCipher(text,s)
 {
-    let arr = "";
-   for(let i=0;i<str.length;i++)
-   {
-      
-        // if(str[i].toLowerCase())
-        // {
-        //     console.log("hi");
-        //     result += String.fromCharCode((str[i].charCodeAt(0) + num - 65) % 26 + 65)
-            
-        // }
-        // else
-        // {
-        //     result += String.fromCharCode((str[i].charCodeAt(0) + num - 97) % 26 + 97);
-          
-        // }
-
-
-   }
-   console.log(result);
+    let result=""
+    for (let i = 0; i < text.length; i++)
+    {
+        let char = text[i];
+        if (char.toUpperCase(text[i]))
+        {
+            let ch =  String.fromCharCode((char.charCodeAt(0) + s-65) % 26 + 65);
+            result += ch;
+        }
+        else
+        {
+            let ch = String.fromCharCode((char.charCodeAt(0) + s-97) % 26 + 97);
+            result += ch;
+        }
+    }
+    console.log(result);
 }
 CaesarCipher("abcd",3);
 
